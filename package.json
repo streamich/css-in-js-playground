@@ -22,7 +22,9 @@
     "test": "jest",
     "pretest:integration": "npm start -- --quiet & wait-on http://localhost:8000",
     "test:integration": "jest -c integration-tests/jest.config.js",
-    "posttest:integration": "npm run stop"
+    "posttest:integration": "npm run stop",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "devDependencies": {
     "@types/codemirror": "^0.0.47",
@@ -110,7 +112,8 @@
     "styletron": "~3.0.0-rc.3",
     "styletron-react": "~3.0.0-rc.3",
     "webfontloader": "~1.6.28",
-    "yocss": "~0.3.0"
+    "yocss": "~0.3.0",
+    "snyk": "^1.316.1"
   },
   "lint-staged": {
     "src/**/*.ts": [
@@ -121,5 +124,6 @@
       "npm run markdown & npm run format:js",
       "git add"
     ]
-  }
+  },
+  "snyk": true
 }
